@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vansh Baranwal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "eJe22GVJKegbw5FeV",
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="background-gradient"></div>
+
+  <nav class="glass-nav">
+    <div class="logo">VB</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1 class="glitch-text" data-text="Vansh Baranwal">Vansh Baranwal</h1>
+        <h2 class="subtitle">Emerging Developer</h2>
+        <p class="tagline">BMSIT Undergrad & IIT Patna BS Scholar</p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn primary">View Work</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <div class="glass-panel about-panel">
+        <p>
+          Driven by a relentless curiosity to master the full spectrum of technology, I am currently navigating a
+          rigorous dual-track educational journey. I am pursuing my <strong>Bachelor of Engineering (BE)</strong> at
+          <strong>BMS Institute of Technology and Management (BMSIT)</strong>, while simultaneously enrolled in the BS
+          degree program from <strong>IIT Patna</strong>. This unique combination allows me to experience a vibrant
+          campus life while accessing the world-class curriculum of an IIT, setting a strong foundation for my future.
+        </p>
+        <p>
+          My academic interests lie in the fields of technology and innovation, and I’m always eager to explore new
+          concepts and practical applications. Outside of academics, I enjoy activities that keep me creatively and
+          physically engaged. I'm always open to connecting with like-minded individuals and learning from diverse
+          perspectives.
+        </p>
+
+        <div class="education-grid">
+          <div class="edu-item">
+            <h4>BMS Institute of Technology and Management</h4>
+            <p>B.E. Computer Science (2025 - 2029)</p>
+          </div>
+          <div class="edu-item">
+            <h4>Indian Institute of Technology, Patna</h4>
+            <p>B.S. Artificial Intelligence & Cybersecurity (2025 - 2029)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <!-- Placeholder for experience as none was explicitly found -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <h3>Open to Opportunities</h3>
+            <p class="date">Present</p>
+            <p>I am actively seeking internships and collaborative opportunities to leverage my growing expertise in
+              Software Engineering and AI for solving real-world challenges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card glass-panel">
+          <img src="Screenshot 2025-10-05 203302.png" alt="Space Biology Knowledge Engine" class="project-image">
+          <div class="project-info">
+            <h3>Space Biology Knowledge Engine</h3>
+            <p class="project-desc">
+              An AI-driven web application built for the NASA Space Apps Challenge.
+              Transforms complex NASA space biology publications into an accessible, searchable database using Google
+              Gemini 2.5.
+            </p>
+            <div class="tags">
+              <span>AI</span>
+              <span>Google Gemini</span>
+              <span>JavaScript</span>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder Project 2 -->
+        <div class="project-card glass-panel">
+          <div class="project-image-placeholder gradient-2"></div>
+          <div class="project-info">
+            <h3>Ethical Hacking Tools</h3>
+            <p class="project-desc">
+              Exploration into cybersecurity and ethical hacking scripts.
+              Focusing on SQL injection prevention and network security.
+            </p>
+            <div class="tags">
+              <span>Cybersecurity</span>
+              <span>Kali Linux</span>
+              <span>SQL Injection</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder Project 3 -->
+        <div class="project-card glass-panel">
+          <img src="Screenshot 2025-12-05 225028.png" alt="Space Biology Knowledge Engine" class="project-image">
+          <div class="project-info">
+            <h3>My Portfolio</h3>
+            <p class="project-desc">
+              A responsive personal portfolio website engineered using React.js to
+              establish a professional digital presence. I implemented a serverless contact
+              form using EmailJS, allowing for real-time messaging directly from the frontend.
+              The site serves as a centralized hub to showcase my dual-degree academic journey,
+              technical skills, and projects.
+            </p>
+            <div class="tags">
+              <span>React.js</span>
+              <span>Tailwind CSS</span>
+              <span>EmailJS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-container glass-panel">
+        <span class="skill-tag">Ethical Hacking</span>
+        <span class="skill-tag">SQL Injection</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Artificial Intelligence</span>
+        <span class="skill-tag">Web Development</span>
+        <span class="skill-tag">Cybersecurity</span>
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Tailwind CSS</span>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-container glass-panel">
+        <p>Feel free to reach out for collaborations or just a friendly chat.</p>
+
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="from_name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="college" name="college" placeholder="College / Organization" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="reply_to" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Purpose of Contacting" required></textarea>
+          </div>
+          <button type="submit" class="btn primary submit-btn">Send Message</button>
+        </form>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vansh-baranwal21/" target="_blank">LinkedIn</a>
+          <a href="mailto:vanshbaranwal21@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vansh Baranwal. Built with Creativity.</p>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
