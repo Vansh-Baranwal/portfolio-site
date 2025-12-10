@@ -72,3 +72,25 @@ if (contactForm) {
 }
 
 console.log("Portfolio loaded successfully!");
+
+// Scroll Animations
+const observeElements = () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Optional: Stop observing once revealed to only animate once
+        // observer.unobserve(entry.target); 
+      }
+    });
+  }, {
+    threshold: 0.1, // Trigger when 10% of the element is visible
+    rootMargin: "0px"
+  });
+
+  const hiddenElements = document.querySelectorAll('.reveal');
+  hiddenElements.forEach((el) => observer.observe(el));
+};
+
+// Initialize observer when DOM is loaded
+document.addEventListener('DOMContentLoaded', observeElements);
