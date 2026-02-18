@@ -167,3 +167,29 @@ const navObserver = new IntersectionObserver((entries) => {
 });
 
 sections.forEach(section => navObserver.observe(section));
+
+// --- Project Slideshow ---
+const slideshow = document.querySelector('.project-slideshow');
+if (slideshow) {
+  const slides = slideshow.querySelectorAll('.slide');
+  const dots = slideshow.querySelectorAll('.dot');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active-slide'));
+    dots.forEach(d => d.classList.remove('active-dot'));
+    slides[index].classList.add('active-slide');
+    dots[index].classList.add('active-dot');
+    current = index;
+  }
+
+  // Auto-rotate every 3s
+  setInterval(() => {
+    showSlide((current + 1) % slides.length);
+  }, 3000);
+
+  // Click dots to jump
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+}
