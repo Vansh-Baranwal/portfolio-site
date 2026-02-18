@@ -94,3 +94,76 @@ const observeElements = () => {
 
 // Initialize observer when DOM is loaded
 document.addEventListener('DOMContentLoaded', observeElements);
+
+// ========== V2 ENHANCEMENTS ==========
+
+// --- Lightbox Modal ---
+const lightboxModal = document.getElementById('lightbox-modal');
+const lightboxImg = lightboxModal?.querySelector('.lightbox-img');
+const lightboxClose = lightboxModal?.querySelector('.lightbox-close');
+
+function openLightbox(src, alt) {
+  if (!lightboxModal || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || 'Enlarged photo';
+  lightboxModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  if (!lightboxModal) return;
+  lightboxModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Attach click to gallery items
+document.querySelectorAll('.gallery-item[data-lightbox]').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    if (img) {
+      openLightbox(img.src, img.alt);
+    }
+  });
+});
+
+// Also attach click to existing gallery items (ALTERINO photos)
+document.querySelectorAll('.gallery-item:not([data-lightbox])').forEach(item => {
+  const img = item.querySelector('img');
+  if (img) {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => {
+      openLightbox(img.src, img.alt);
+    });
+  }
+});
+
+// Close lightbox
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightboxModal) {
+  lightboxModal.addEventListener('click', (e) => {
+    if (e.target === lightboxModal) closeLightbox();
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// --- Active Nav Section Indicator ---
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}, {
+  threshold: 0.3,
+  rootMargin: '-80px 0px -50% 0px'
+});
+
+sections.forEach(section => navObserver.observe(section));

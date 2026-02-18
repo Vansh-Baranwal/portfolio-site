@@ -597,3 +597,291 @@ footer {
 .reveal-delay-3 {
   transition-delay: 0.3s;
 }
+
+/* ========== V2 ENHANCEMENTS ========== */
+
+/* --- Hackathon Card Hover Effects --- */
+.hackathon-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hackathon-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 40px rgba(0, 198, 255, 0.15),
+    0 0 20px rgba(0, 198, 255, 0.08);
+}
+
+/* Silver rank badge for 2nd place */
+.rank-badge.rank-silver {
+  background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+  color: #1a1a1a;
+}
+
+/* Increase hackathon grid spacing */
+.hackathon-grid {
+  gap: 2.5rem;
+}
+
+/* --- Cloudathon Gallery (3x2 grid) --- */
+.cloudathon-gallery {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 160px 160px;
+}
+
+.cloudathon-gallery .gallery-item:first-child {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+/* Image / gradient placeholders */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.15), rgba(0, 114, 255, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}
+
+.img-placeholder span {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.gallery-hint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Gallery zoom on hover */
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* --- Lightbox Modal --- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transform: scale(0.9);
+  transition: transform 0.35s ease;
+  object-fit: contain;
+}
+
+.lightbox-overlay.active .lightbox-img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* --- Navbar Active Section Indicator --- */
+.nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a.active {
+  color: #fff;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+  animation: navIndicatorIn 0.3s ease;
+}
+
+@keyframes navIndicatorIn {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+/* --- Project Card Links & Small Buttons --- */
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  border-radius: 20px;
+}
+
+/* Climate project gradient placeholder */
+.gradient-climate {
+  background: linear-gradient(135deg, #0072ff, #00c6ff, #00f260);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* --- Improved Section Spacing --- */
+.section {
+  padding: 7rem 10%;
+}
+
+/* --- Better Reveal Animations --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered card animations */
+.hackathon-card.reveal:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.project-card.reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.project-card.reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+/* --- Mobile Enhancements --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 6%;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hackathon-grid {
+    gap: 2rem;
+  }
+
+  .hack-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cloudathon-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 130px 130px 130px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .project-links {
+    flex-wrap: wrap;
+  }
+
+  .glass-panel {
+    padding: 1.5rem;
+  }
+
+  .glitch-text {
+    font-size: 3rem;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cloudathon-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px 120px 120px;
+  }
+
+  .hack-title h3 {
+    font-size: 1.25rem;
+  }
+
+  .rank-badge {
+    font-size: 0.8rem;
+  }
+}
