@@ -623,10 +623,10 @@ footer {
   gap: 2.5rem;
 }
 
-/* --- Cloudathon Gallery (3x2 grid) --- */
+/* --- Cloudathon Gallery (3 items in 1 row) --- */
 .cloudathon-gallery {
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 160px 160px;
+  grid-template-rows: 200px;
 }
 
 .cloudathon-gallery .gallery-item:first-child {
@@ -756,6 +756,7 @@ footer {
     width: 0;
     left: 50%;
   }
+
   to {
     width: 70%;
     left: 15%;
@@ -799,7 +800,7 @@ footer {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.active {
@@ -842,7 +843,7 @@ footer {
 
   .cloudathon-gallery {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 130px 130px 130px;
+    grid-template-rows: 150px 150px;
   }
 
   .projects-grid {
@@ -873,8 +874,8 @@ footer {
 
 @media (max-width: 480px) {
   .cloudathon-gallery {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 120px 120px 120px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 160px 160px 160px;
   }
 
   .hack-title h3 {
