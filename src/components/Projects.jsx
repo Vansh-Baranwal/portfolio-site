@@ -6,6 +6,7 @@ import imgProject1 from '../assets/projects/Screenshot 2025-10-05 203302.png';
 import imgProject2 from '../assets/projects/climate-risk-2.png';
 import imgProject3 from '../assets/hackathons/ALterino 1.jpeg';
 import nammafix1 from '../assets/projects/nammafix-1.png';
+import campusos1 from '../assets/projects/campusos-1.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +35,15 @@ const MISSIONS = [
     description: 'An AI-powered civic platform connecting citizens, government authorities, and media to detect, track, and resolve urban infrastructure problems like potholes, garbage overflow, and flooding.',
     tech: ['React', 'Node.js', 'PostgreSQL', 'PostGIS', 'AI', 'Supabase'],
     image: nammafix1,
+    link: '#',
+    blend: 'opacity-80 group-hover:opacity-100',
+  },
+  {
+    id: '04',
+    name: 'Campus OS — Next-Gen College Platform',
+    description: 'A reimagined university website built as a living product with AI assistant, smart dashboard, Lost & Found matching, mental health support, digital ID, and a 360° campus explorer.',
+    tech: ['Next.js', 'AI', 'Vercel', 'UX Design', 'Full-Stack'],
+    image: campusos1,
     link: '#',
     blend: 'opacity-80 group-hover:opacity-100',
   },

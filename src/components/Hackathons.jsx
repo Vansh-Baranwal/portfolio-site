@@ -11,6 +11,9 @@ import cloudathon3 from '../assets/hackathons/cloudathon-3.jpg';
 import bengaluru1 from '../assets/hackathons/bengaluru-1.jpg';
 import bengaluru2 from '../assets/hackathons/bengaluru-2.jpg';
 import bengaluru3 from '../assets/hackathons/bengaluru-3.jpg';
+import browserbattle1 from '../assets/hackathons/browserbattle-1.jpg';
+import browserbattle2 from '../assets/hackathons/browserbattle-2.jpg';
+import browserbattle3 from '../assets/hackathons/browserbattle-3.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,12 +41,22 @@ const HACKATHONS = [
   {
     id: '03',
     title: 'Build For Bengaluru Hackathon',
-    subtitle: 'Build For Bengaluru',
+    subtitle: 'Build For Bengaluru - Shri Krishna Institute of Technology, Bangalore',
     rank: '',
     description: 'NammaFix – AI Civic Intelligence Platform connecting citizens, government, and media to resolve urban infrastructure issues.',
     team: 'Team: VegaSync',
     tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'PostGIS', 'AI', 'Render', 'Vercel', 'Supabase'],
     images: [bengaluru1, bengaluru2, bengaluru3],
+  },
+  {
+    id: '04',
+    title: 'Browser Battle — BMSCE Hackathon',
+    subtitle: 'B. M. S. College of Engineering, Bengaluru',
+    rank: '',
+    description: 'Built Campus OS — a next-gen college platform that reimagines static university websites as a living, interactive product with AI assistant, Lost & Found matching, mental health support, digital ID, verified certificates, and a 360° campus explorer.',
+    team: 'Team: Syntax Squad',
+    tags: ['Next.js', 'AI Assistant', 'UX Design', 'Vercel', 'Full-Stack', 'Product Thinking'],
+    images: [browserbattle1, browserbattle2, browserbattle3],
   }
 ];
 
