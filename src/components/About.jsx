@@ -3,8 +3,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Reuse our hero assets for the dual-identity mask effect prototype
-import imgSpiderman from '../assets/spiderman/20260407_055437.png';
-import imgMan from '../assets/man/1775519899126.png';
+import imgSpiderman from '../assets/ironman.png';
+import imgMan from '../assets/vansh.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -147,7 +147,7 @@ export default function About() {
 
           <div className="overflow-hidden">
             <p className="stagger-reveal text-lg md:text-xl text-gray-400 font-light leading-relaxed max-w-xl">
-              There are two sides to every great digital experience. The relentless logic of the backend, and the striking, emotional pull of the frontend. As a Full-Stack Developer, my superpower lies in bridging that gap—masking complex, high-performance web architecture behind beautiful, fluid, and fiercely creative user interfaces.
+              Driven by a relentless curiosity to master the full spectrum of technology, I am currently navigating a rigorous dual-track educational journey. I am pursuing my Bachelor of Engineering (BE) at BMS Institute of Technology and Management (BMSIT), while simultaneously enrolled in the BS degree program from IIT Patna. This unique combination allows me to experience a vibrant campus life while accessing the world-class curriculum of an IIT.
             </p>
           </div>
 
@@ -155,10 +155,10 @@ export default function About() {
           <div className="overflow-hidden">
             <div className="stagger-reveal grid grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-white/10 max-w-xl">
               {[
-                "Full-Stack Fluidity", 
-                "Motion & Micro-Interactions", 
-                "System Architecture", 
-                "Pixel-Perfect UIs"
+                "Artificial Intelligence", 
+                "Cybersecurity", 
+                "Web Development", 
+                "Python"
               ].map((skill, i) => (
                 <div key={i} className="flex items-center space-x-3 group">
                   <div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-red-500 transition-colors duration-300" />
