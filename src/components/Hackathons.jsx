@@ -39,7 +39,7 @@ const HACKATHONS = [
     id: '03',
     title: 'Build For Bengaluru Hackathon',
     subtitle: 'Build For Bengaluru',
-    rank: '🥇 1st Place',
+    rank: '',
     description: 'NammaFix – AI Civic Intelligence Platform connecting citizens, government, and media to resolve urban infrastructure issues.',
     team: 'Team: VegaSync',
     tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'PostGIS', 'AI', 'Render', 'Vercel', 'Supabase'],
