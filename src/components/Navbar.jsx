@@ -104,11 +104,7 @@ export default function Navbar() {
           
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer group">
-            {/* Minimalist Spider/Web-inspired SVG Logo */}
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">
-              <path d="M12 2L12 22M2 12L22 12M5 5L19 19M5 19L19 5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
-              <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-            </svg>
+            <img src="/favicon.png" alt="VB Logo" className="w-10 h-10 object-contain rounded-sm transition-transform duration-500 group-hover:scale-110" />
             <span className="text-white font-bold tracking-widest uppercase text-sm ml-2 opacity-90 group-hover:opacity-100 transition-opacity">
               VB
             </span>
