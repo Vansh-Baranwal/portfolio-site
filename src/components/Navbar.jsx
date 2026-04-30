@@ -129,14 +129,15 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button 
+            <a 
+              href="#contact"
               ref={el => linksRef.current[NAV_LINKS.length] = el} // animate with the links
-              className="relative px-6 py-2.5 rounded-full overflow-hidden group bg-transparent border border-white/20 text-white text-sm font-medium tracking-wider hover:border-white/60 transition-colors duration-300"
+              className="inline-block relative px-6 py-2.5 rounded-full overflow-hidden group bg-transparent border border-white/20 text-white text-sm font-medium tracking-wider hover:border-white/60 transition-colors duration-300"
             >
               <span className="relative z-10 group-hover:text-black transition-colors duration-300">Let's Talk</span>
               {/* Button Inner Fill Effect */}
               <div className="absolute inset-0 h-full w-full bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Toggle */}
@@ -173,13 +174,14 @@ export default function Navbar() {
             </a>
           ))}
           
-          <button 
+          <a 
+            href="#contact"
             ref={el => mobileLinksRef.current[NAV_LINKS.length] = el}
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-8 px-8 py-3 rounded-full border border-white text-white tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+            className="inline-block mt-8 px-8 py-3 rounded-full border border-white text-white tracking-widest hover:bg-white hover:text-black transition-all duration-300"
           >
             Hire Me
-          </button>
+          </a>
         </div>
       </div>
     </>
