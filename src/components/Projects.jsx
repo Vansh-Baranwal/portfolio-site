@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import imgProject1 from '../assets/projects/Screenshot 2025-10-05 203302.png';
 import imgProject2 from '../assets/projects/climate-risk-2.png';
 import imgProject3 from '../assets/hackathons/ALterino 1.jpeg';
+import nammafix1 from '../assets/projects/nammafix-1.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,15 @@ const MISSIONS = [
     link: '#',
     blend: 'opacity-80 group-hover:opacity-100',
   },
-
+  {
+    id: '03',
+    name: 'NammaFix — AI Civic Intelligence Platform',
+    description: 'An AI-powered civic platform connecting citizens, government authorities, and media to detect, track, and resolve urban infrastructure problems like potholes, garbage overflow, and flooding.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'PostGIS', 'AI', 'Supabase'],
+    image: nammafix1,
+    link: '#',
+    blend: 'opacity-80 group-hover:opacity-100',
+  },
 ];
 
 const ProjectCard = ({ project }) => {
