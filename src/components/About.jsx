@@ -140,8 +140,8 @@ export default function About() {
           
           <div className="overflow-hidden">
             <h2 className="stagger-reveal text-5xl md:text-6xl font-bold tracking-tighter text-white font-sans leading-tight">
-              The Dual <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-500 font-serif italic pr-4">Persona</span>
+              About <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-500 font-serif italic pr-4">me</span>
             </h2>
           </div>
 
