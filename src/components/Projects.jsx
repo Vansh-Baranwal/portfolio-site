@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import imgSpiderman from '../assets/ironman.png';
-import imgMan from '../assets/vansh.png';
+import imgProject1 from '../assets/projects/Screenshot 2025-10-05 203302.png';
+import imgProject2 from '../assets/projects/climate-risk-2.png';
+import imgProject3 from '../assets/hackathons/ALterino 1.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +14,7 @@ const MISSIONS = [
     name: 'Space Biology Knowledge Engine',
     description: 'An AI-driven web application built for the NASA Space Apps Challenge. Transforms complex NASA space biology publications into an accessible database.',
     tech: ['AI', 'Google Gemini', 'JavaScript', 'Tailwind CSS'],
-    image: imgSpiderman,
+    image: imgProject1,
     link: '#',
     blend: 'mix-blend-luminosity brightness-75',
   },
@@ -22,7 +23,7 @@ const MISSIONS = [
     name: 'Climate Risk Management System',
     description: 'An AI + cloud-powered platform for climate risk prediction in urban informal settlements. Designed for disaster preparedness.',
     tech: ['AWS Lambda', 'DynamoDB', 'AI/ML', 'Serverless'],
-    image: imgMan,
+    image: imgProject2,
     link: '#',
     blend: 'mix-blend-luminosity grayscale',
   },
@@ -31,7 +32,7 @@ const MISSIONS = [
     name: 'ALTERINO Hackathon System',
     description: 'Successfully qualified through competitive stages and developed a functional MVP under strict deadlines with rapid prototyping.',
     tech: ['Rapid Prototyping', 'Design Thinking', 'Agile'],
-    image: imgSpiderman,
+    image: imgProject3,
     link: '#',
     blend: 'mix-blend-overlay brightness-125 saturate-150',
   }
