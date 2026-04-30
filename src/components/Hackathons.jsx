@@ -8,6 +8,9 @@ import alterino3 from '../assets/hackathons/Alterino 3.jpeg';
 import cloudathon1 from '../assets/hackathons/cloudathon-1.jpg';
 import cloudathon2 from '../assets/hackathons/cloudathon-2.jpg';
 import cloudathon3 from '../assets/hackathons/cloudathon-3.jpg';
+import bengaluru1 from '../assets/hackathons/bengaluru-1.jpg';
+import bengaluru2 from '../assets/hackathons/bengaluru-2.jpg';
+import bengaluru3 from '../assets/hackathons/bengaluru-3.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,6 +34,16 @@ const HACKATHONS = [
     team: 'Syntax Hex',
     tags: ['AWS Lambda', 'DynamoDB', 'S3', 'CloudFront', 'API Gateway', 'AI Integration', 'Cloud Architecture'],
     images: [cloudathon2, cloudathon1, cloudathon3],
+  },
+  {
+    id: '03',
+    title: 'Build For Bengaluru Hackathon',
+    subtitle: 'Build For Bengaluru',
+    rank: '🥇 1st Place',
+    description: 'NammaFix – AI Civic Intelligence Platform connecting citizens, government, and media to resolve urban infrastructure issues.',
+    team: 'Team: VegaSync',
+    tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'PostGIS', 'AI', 'Render', 'Vercel', 'Supabase'],
+    images: [bengaluru1, bengaluru2, bengaluru3],
   }
 ];
 
