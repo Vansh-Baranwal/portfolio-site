@@ -3,7 +3,6 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import { vertexShader, fragmentShader } from './HeroShaders';
 
-import imgSpiderman from '../assets/ironman.png';
 import imgMan from '../assets/vansh.png';
 
 export default function Hero() {
@@ -76,7 +75,7 @@ export default function Hero() {
     uniformRef.current = uniforms;
 
     Promise.all([
-      textureLoader.loadAsync(imgSpiderman),
+      textureLoader.loadAsync(imgMan),
       textureLoader.loadAsync(imgMan)
     ]).then(([tex1, tex2]) => {
       // Improve texture visual quality

@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Reuse our hero assets for the dual-identity mask effect prototype
-import imgSpiderman from '../assets/ironman.png';
 import imgMan from '../assets/vansh.png';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -120,7 +119,7 @@ export default function About() {
             }}
           >
             <img 
-              src={imgSpiderman} 
+              src={imgMan} 
               alt="Hidden Superhero Persona" 
               className="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[2s] ease-out"
             />
