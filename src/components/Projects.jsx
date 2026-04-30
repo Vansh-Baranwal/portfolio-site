@@ -2,35 +2,35 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import imgSpiderman from '../assets/spiderman/20260407_055437.png';
-import imgMan from '../assets/man/1775519899126.png';
+import imgSpiderman from '../assets/ironman.png';
+import imgMan from '../assets/vansh.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const MISSIONS = [
   {
     id: '01',
-    name: 'The Nexus Protocol',
-    description: 'Engineered a seamless, real-time communication platform built to handle thousands of concurrent global users.',
-    tech: ['React', 'WebSockets', 'Node.js', 'Tailwind'],
+    name: 'Space Biology Knowledge Engine',
+    description: 'An AI-driven web application built for the NASA Space Apps Challenge. Transforms complex NASA space biology publications into an accessible database.',
+    tech: ['AI', 'Google Gemini', 'JavaScript', 'Tailwind CSS'],
     image: imgSpiderman,
     link: '#',
     blend: 'mix-blend-luminosity brightness-75',
   },
   {
     id: '02',
-    name: 'Operation: Aether',
-    description: 'A high-performance digital storefront optimized for secure, millisecond-latency checkout flows.',
-    tech: ['Next.js', 'PostgreSQL', 'Stripe API', 'GSAP'],
+    name: 'Climate Risk Management System',
+    description: 'An AI + cloud-powered platform for climate risk prediction in urban informal settlements. Designed for disaster preparedness.',
+    tech: ['AWS Lambda', 'DynamoDB', 'AI/ML', 'Serverless'],
     image: imgMan,
     link: '#',
     blend: 'mix-blend-luminosity grayscale',
   },
   {
     id: '03',
-    name: 'Project Aegis',
-    description: 'A heavy-duty, fortified internal dashboard managing complex data infrastructures and visual analytics.',
-    tech: ['React', 'Python', 'GraphQL', 'AWS'],
+    name: 'ALTERINO Hackathon System',
+    description: 'Successfully qualified through competitive stages and developed a functional MVP under strict deadlines with rapid prototyping.',
+    tech: ['Rapid Prototyping', 'Design Thinking', 'Agile'],
     image: imgSpiderman,
     link: '#',
     blend: 'mix-blend-overlay brightness-125 saturate-150',

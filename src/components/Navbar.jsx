@@ -110,7 +110,7 @@ export default function Navbar() {
               <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
             </svg>
             <span className="text-white font-bold tracking-widest uppercase text-sm ml-2 opacity-90 group-hover:opacity-100 transition-opacity">
-              Spider
+              VB
             </span>
           </div>
 
