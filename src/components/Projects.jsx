@@ -16,7 +16,7 @@ const MISSIONS = [
     tech: ['AI', 'Google Gemini', 'JavaScript', 'Tailwind CSS'],
     image: imgProject1,
     link: '#',
-    blend: 'mix-blend-luminosity brightness-75',
+    blend: 'opacity-80 group-hover:opacity-100',
   },
   {
     id: '02',
@@ -25,7 +25,7 @@ const MISSIONS = [
     tech: ['AWS Lambda', 'DynamoDB', 'AI/ML', 'Serverless'],
     image: imgProject2,
     link: '#',
-    blend: 'mix-blend-luminosity grayscale',
+    blend: 'opacity-80 group-hover:opacity-100',
   },
   {
     id: '03',
@@ -34,7 +34,7 @@ const MISSIONS = [
     tech: ['Rapid Prototyping', 'Design Thinking', 'Agile'],
     image: imgProject3,
     link: '#',
-    blend: 'mix-blend-overlay brightness-125 saturate-150',
+    blend: 'opacity-80 group-hover:opacity-100',
   }
 ];
 
@@ -116,9 +116,9 @@ const ProjectCard = ({ project }) => {
           ref={imageRef}
           src={project.image} 
           alt={project.name} 
-          className={`absolute inset-0 w-full h-[120%] -top-[10%] object-cover object-center ${project.blend} transition-all duration-[1.5s]`}
+          className={`absolute inset-0 w-full h-[120%] -top-[10%] object-cover object-top ${project.blend} transition-all duration-700`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
       </div>
 
       {/* Dynamic Hover Glow Layer Tracker */}
