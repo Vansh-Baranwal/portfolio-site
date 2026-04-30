@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -32,10 +33,28 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
+  const [isSending, setIsSending] = useState(false);
+  const [submitText, setSubmitText] = useState("Transmit Message");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Insert actual send behavior here later
-    alert("Connection encrypted. Message transmitted!");
+    if (isSending) return;
+    setIsSending(true);
+    setSubmitText("Sending...");
+
+    emailjs.sendForm('service_szuqirl', 'template_h9bohvh', formRef.current, 'eJe22GVJKegbw5FeV')
+      .then(() => {
+          setSubmitText("Message Sent!");
+          formRef.current.reset();
+          setTimeout(() => setSubmitText("Transmit Message"), 3000);
+      }, (error) => {
+          console.error(error.text);
+          setSubmitText("Failed to Send");
+          setTimeout(() => setSubmitText("Transmit Message"), 3000);
+      })
+      .finally(() => {
+          setIsSending(false);
+      });
   };
 
   return (
@@ -73,6 +92,7 @@ export default function Contact() {
               <input 
                 type="text" 
                 id="name"
+                name="from_name"
                 required
                 className="peer w-full bg-white/5 border border-white/5 text-white text-base rounded-xl px-5 py-4 outline-none transition-all duration-300 focus:bg-white/10 focus:border-red-500/50 focus:shadow-[0_0_20px_rgba(239,68,68,0.2)] placeholder-transparent"
                 placeholder="Name"
@@ -87,6 +107,7 @@ export default function Contact() {
               <input 
                 type="email" 
                 id="email"
+                name="reply_to"
                 required
                 className="peer w-full bg-white/5 border border-white/5 text-white text-base rounded-xl px-5 py-4 outline-none transition-all duration-300 focus:bg-white/10 focus:border-red-500/50 focus:shadow-[0_0_20px_rgba(239,68,68,0.2)] placeholder-transparent"
                 placeholder="Email"
@@ -95,12 +116,27 @@ export default function Contact() {
                 Email
               </label>
             </div>
+            {/* College Input */}
+            <div className="relative group animate-element md:col-span-2">
+              <input 
+                type="text" 
+                id="college"
+                name="college"
+                required
+                className="peer w-full bg-white/5 border border-white/5 text-white text-base rounded-xl px-5 py-4 outline-none transition-all duration-300 focus:bg-white/10 focus:border-red-500/50 focus:shadow-[0_0_20px_rgba(239,68,68,0.2)] placeholder-transparent"
+                placeholder="College / Organization"
+              />
+              <label htmlFor="college" className="absolute left-5 top-4 text-gray-500 text-base pointer-events-none transition-all duration-300 peer-focus:-top-3 peer-focus:text-xs peer-focus:text-red-400 peer-valid:-top-3 peer-valid:text-xs peer-valid:text-gray-400 bg-[#030303] px-1 rounded">
+                College / Organization
+              </label>
+            </div>
           </div>
 
           {/* Message Textarea */}
           <div className="relative group animate-element">
             <textarea 
               id="message"
+              name="message"
               required
               rows="5"
               className="peer w-full bg-white/5 border border-white/5 text-white text-base rounded-xl px-5 py-4 outline-none transition-all duration-300 focus:bg-white/10 focus:border-red-500/50 focus:shadow-[0_0_20px_rgba(239,68,68,0.2)] placeholder-transparent resize-none"
@@ -121,7 +157,7 @@ export default function Contact() {
               <span className="absolute inset-0 bg-gradient-to-r from-red-600/0 via-red-600/20 to-red-600/0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
               
               <span className="relative z-10 flex items-center justify-center space-x-3">
-                <span>Transmit Message</span>
+                <span>{submitText}</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 text-red-500">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
