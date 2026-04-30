@@ -52,10 +52,10 @@ const ProjectCard = ({ project }) => {
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
     
-    // Apply 3D tilt mapped against mouse offset (multiplied by degrees of max tilt)
+    // Apply 3D tilt mapped against mouse offset
     gsap.to(cardRef.current, {
-      rotateY: x * 15, // tilt left/right up to 7.5 deg
-      rotateX: -y * 15, // tilt up/down up to 7.5 deg
+      rotateY: x * 10, 
+      rotateX: -y * 10, 
       transformPerspective: 1000,
       ease: 'power2.out',
       duration: 0.4
@@ -67,15 +67,6 @@ const ProjectCard = ({ project }) => {
       y: e.clientY - rect.top,
       opacity: 1,
       duration: 0.2
-    });
-    
-    // Inverse parallax on the image inside
-    gsap.to(imageRef.current, {
-      x: -x * 20,
-      y: -y * 20,
-      scale: 1.1,
-      ease: 'power2.out',
-      duration: 0.4
     });
   };
 
@@ -92,77 +83,59 @@ const ProjectCard = ({ project }) => {
       opacity: 0,
       duration: 0.4
     });
-    
-    gsap.to(imageRef.current, {
-      x: 0,
-      y: 0,
-      scale: 1.0,
-      ease: 'power3.out',
-      duration: 0.6
-    });
   };
 
   return (
     <div 
-      className="project-card relative w-full h-[450px] rounded-xl overflow-hidden cursor-pointer group bg-black border border-white/10"
+      className="project-card relative w-full h-full flex flex-col rounded-2xl overflow-hidden cursor-pointer group bg-black/40 backdrop-blur-md border border-white/10 hover:border-white/30 transition-colors duration-500"
       style={{ transformStyle: 'preserve-3d' }}
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-zinc-900">
+      {/* Image Header */}
+      <div className="w-full h-56 md:h-64 overflow-hidden relative border-b border-white/5 z-10 bg-black">
         <img 
           ref={imageRef}
           src={project.image} 
           alt={project.name} 
-          className={`absolute inset-0 w-full h-[120%] -top-[10%] object-cover object-top ${project.blend} transition-all duration-700`}
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+        {/* Very subtle dim so it fits the dark theme, but completely visible */}
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
       </div>
 
       {/* Dynamic Hover Glow Layer Tracker */}
       <div 
         ref={glowRef}
-        className="absolute w-64 h-64 bg-red-500/10 rounded-full blur-[80px] pointer-events-none z-10 -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-screen"
+        className="absolute w-64 h-64 bg-red-500/15 rounded-full blur-[80px] pointer-events-none z-0 -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-screen"
       />
-      
-      {/* Laser Border overlay on Hover */}
-      <div className="absolute inset-0 border border-red-500/0 group-hover:border-red-500/40 rounded-xl transition-colors duration-500 z-20 pointer-events-none" />
 
       {/* Foreground Content */}
-      <div className="absolute inset-0 z-30 p-8 flex flex-col justify-end pointer-events-none" style={{ transform: 'translateZ(30px)' }}> {/* Push text outward on Z axis */}
+      <div className="flex-1 p-8 flex flex-col z-20" style={{ transform: 'translateZ(20px)' }}> 
         
-        {/* Dossier Code */}
-        <div className="text-red-500/80 font-mono text-xs tracking-[0.3em] mb-2 font-bold uppercase transition-transform duration-500 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
-          File_ID // {project.id}
-        </div>
-        
-        <h3 className="text-3xl font-bold tracking-tight text-white mb-3 leading-none drop-shadow-xl font-sans">
+        <h3 className="text-2xl font-bold tracking-tight text-white mb-3 leading-tight drop-shadow-md font-sans">
           {project.name}
         </h3>
         
-        <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 font-light max-w-[90%]">
+        <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light flex-1">
           {project.description}
         </p>
         
-        <div className="flex flex-wrap gap-2 mb-6 pointer-events-auto">
+        <div className="flex flex-wrap gap-2 mb-8 pointer-events-auto mt-auto">
           {project.tech.map((tool) => (
-            <span key={tool} className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-white/20 rounded-full text-gray-300 font-medium">
+            <span key={tool} className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-white/10 bg-white/5 rounded-full text-gray-300 font-medium">
               {tool}
             </span>
           ))}
         </div>
         
-        <div className="mt-auto pointer-events-auto w-fit">
-          <a href={project.link} className="flex items-center space-x-2 text-sm uppercase tracking-[0.2em] font-medium text-white group/link relative">
-            <span className="relative overflow-hidden block">
-              <span className="block group-hover/link:-translate-y-full transition-transform duration-300">Access Record</span>
-              <span className="block absolute inset-0 translate-y-full group-hover/link:translate-y-0 transition-transform duration-300 text-red-400">Access Record</span>
-            </span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300 text-red-500">
-              <line x1="5" y1="19" x2="19" y2="5"></line>
-              <polyline points="10 5 19 5 19 14"></polyline>
+        <div className="pointer-events-auto w-fit">
+          <a href={project.link} className="flex items-center space-x-2 text-sm uppercase tracking-widest font-medium text-red-500 hover:text-red-400 group/link relative transition-colors">
+            <span>View Project</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover/link:translate-x-1 transition-transform duration-300">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
         </div>
