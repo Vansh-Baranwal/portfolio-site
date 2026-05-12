@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const framePaths = [];
         for (let i = 0; i < frameCount; i++) {
             const padded = String(i).padStart(3, '0');
-            framePaths.push(`./assets/ezgif-split/frame_${padded}_delay-0.041s.webp`);
+            framePaths.push(`/ezgif-split/frame_${padded}_delay-0.041s.webp`);
         }
 
         // Resize canvas to match display size (handles retina)
