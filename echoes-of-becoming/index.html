@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Becoming</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="A cinematic personal journey timeline — the story of a developer becoming.">
+    <meta property="og:title" content="Echoes of Becoming">
+    <meta property="og:description"
+        content="A cinematic personal journey timeline — the story of a developer becoming.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen Overlay -->
+    <div id="loading-screen">
+        <div class="bloom-flash"></div>
+        <div class="loader-content">
+            <!-- Geometric Monogram SVG -->
+            <svg class="monogram-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="monogram-path" d="M 50 5 L 95 50 L 50 95 L 5 50 Z" stroke="var(--lime)" stroke-width="2"
+                    fill="transparent" />
+                <path class="monogram-inner" d="M 50 25 L 75 50 L 50 75 L 25 50 Z" stroke="var(--lime)"
+                    stroke-width="1.5" fill="transparent" />
+            </svg>
+            <!-- Terminal Progress Text -->
+            <div class="terminal-loader">
+                <span class="terminal-static">&gt; Compiling your journey...</span>
+                <span class="terminal-progress">[<span class="loader-blocks"></span>] <span
+                        class="loader-percent">0%</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Cinematic UI Elements -->
+    <div class="grain"></div>
+    <div class="progress-container">
+        <div class="progress-bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Main Content Area -->
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- HERO SECTION -->
+            <section class="hero-section" id="hero">
+                <!-- Scroll-controlled frame sequence canvas -->
+                <canvas id="hero-frame-sequence"></canvas>
+
+                <!-- Ambient Audio Element -->
+                <audio id="ambient-audio" loop>
+                    <!-- Provide a local file path here, external CDN links may return 403 Forbidden -->
+                    <source src="./Measured_Intent.mp3" type="audio/mpeg">
+                </audio>
+
+                <!-- UI Elements -->
+                <button class="sound-toggle" data-cursor="hover" aria-label="Toggle sound">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-mute">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+
+                <!-- Content Container -->
+                <div class="hero-content">
+                    <!-- Left Corner Content -->
+                    <div class="hero-left-content">
+                        <div class="hero-label">&gt; Initializing your journey...</div>
+                        
+                        <div class="hero-counters">
+                            <div class="counter-item">
+                                <div class="counter-label">Projects Built</div>
+                                <div class="counter-value"><span class="val" data-target="12">0</span>+</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-label">Hackathons</div>
+                                <div class="counter-value"><span class="val" data-target="8">0</span>+</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-label">Technologies</div>
+                                <div class="counter-value"><span class="val" data-target="15">0</span>+</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-label">Nights Debugging</div>
+                                <div class="counter-value"><span class="val-infinity">∞</span></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Right Corner Content -->
+                    <div class="hero-right-content">
+                        <h1 class="hero-headline">
+                            <span class="line-1">Not Just</span><br>
+                            <span class="line-2">Building Projects</span><br>
+                            <span class="line-3">Building Myself</span>
+                        </h1>
+                        <p class="hero-subtext">A story of curiosity, ambition, failure, and becoming.</p>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="chevron">&darr;</div>
+                    <div class="scroll-text">scroll to begin</div>
+                </div>
+            </section>
+
+            <!-- INTRODUCTION SECTION -->
+            <section class="intro-section" id="introduction">
+                <div class="intro-grid">
+
+                    <!-- Left Column: Hologram Card -->
+                    <div class="intro-left">
+                        <div class="hologram-wrapper">
+                            <div class="hologram-card">
+                                <img src="./assets/profile.jpg" alt="Profile Photo" class="profile-image" />
+                                <div class="scanlines"></div>
+                            </div>
+
+                            <!-- Orbiting Satellites -->
+                            <div class="satellite sat-1">⚛️ React</div>
+                            <div class="satellite sat-2">🐍 Python</div>
+                            <div class="satellite sat-3">⚡ JS</div>
+                            <div class="satellite sat-4">💎 Solidity</div>
+                            <div class="satellite sat-5">🌊 Tailwind</div>
+                            <div class="satellite sat-6">📦 Git</div>
+                            <div class="satellite sat-7">🟢 Node.js</div>
+                            <div class="satellite sat-8">🍃 MongoDB</div>
+                            <div class="satellite sat-9">☁️ AWS</div>
+                            <div class="satellite sat-10">🌩️ Cloud</div>
+                            <div class="satellite sat-11">🐙 GitHub</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Text Content -->
+                    <div class="intro-right">
+                        <div class="intro-label">WHO AM I</div>
+                        <h2 class="intro-headline">A student. A builder. Endlessly curious.</h2>
+                        <p class="intro-body">
+                            Pursuing a dual degree (B.E. + B.S.) while obsessively exploring AI/ML, Blockchain, Web
+                            Development, Hackathons, and Open Source. Driven not by grades, but by the sheer joy of
+                            building things.
+                        </p>
+
+                        <div class="intro-cards">
+                            <div class="stat-card" data-cursor="hover">
+                                <div class="stat-num"><span class="stat-val" data-target="12">0</span>+</div>
+                                <div class="stat-desc">Projects Built</div>
+                            </div>
+                            <div class="stat-card" data-cursor="hover">
+                                <div class="stat-num"><span class="stat-val" data-target="8">0</span>+</div>
+                                <div class="stat-desc">Hackathons</div>
+                            </div>
+                            <div class="stat-card" data-cursor="hover">
+                                <div class="stat-num"><span class="stat-val" data-target="15">0</span>+</div>
+                                <div class="stat-desc">Technologies</div>
+                            </div>
+                            <div class="stat-card" data-cursor="hover">
+                                <div class="stat-num">∞</div>
+                                <div class="stat-desc">Debugging Nights</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <!-- REACT 3D SPIRAL TIMELINE COMPONENT WILL MOUNT HERE -->
+            <div id="react-timeline-root"></div>
+            <div id="react-arenas-root"></div>
+        </div>
+    </main>
+
+    <!-- CLOSING SECTION -->
+    <section id="closing" class="closing-section">
+        <!-- Visual Background: Infinite Road -->
+        <div class="infinite-road-container">
+            <div class="horizon-glow"></div>
+            <div class="stars-tunnel"></div>
+            <div class="road-perspective">
+                <div class="road-grid"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="closing-content">
+            <div class="closing-label">THIS IS JUST THE BEGINNING</div>
+            <p class="closing-paragraph">Every line of code. Every late night. Every failed attempt. Every moment of
+                doubt followed by a moment of clarity. It was all part of this.</p>
+            <h2 class="closing-quote">The best journeys are<br>still under construction.</h2>
+            <a href="#" class="cta-button magnet-btn" data-cursor="hover" aria-label="Continue watching my journey">
+                <span>Continue Watching My Journey &rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <!-- Background Glow -->
+            <div class="contact-glow"></div>
+
+            <!-- Header -->
+            <div class="contact-header">
+                <p class="contact-label">[ ENCRYPTED CHANNEL ]</p>
+                <h2 class="contact-title">Let's <span class="contact-accent">Connect</span></h2>
+                <p class="contact-subtitle">Whether you have a groundbreaking tech vision, a complex application to
+                    build, or just want to talk shop—my inbox is always open. Let's collaborate and architect the
+                    digital tools of tomorrow.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-row">
+                    <!-- Name Input -->
+                    <div class="form-group">
+                        <input type="text" id="contact-name" name="from_name" required placeholder=" "
+                            class="form-input" />
+                        <label for="contact-name" class="form-label">Name</label>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="form-group">
+                        <input type="email" id="contact-email" name="reply_to" required placeholder=" "
+                            class="form-input" />
+                        <label for="contact-email" class="form-label">Email</label>
+                    </div>
+                </div>
+
+                <!-- College/Organization Input -->
+                <div class="form-group form-group-full">
+                    <input type="text" id="contact-college" name="college" required placeholder=" "
+                        class="form-input" />
+                    <label for="contact-college" class="form-label">College / Organization</label>
+                </div>
+
+                <!-- Message Textarea -->
+                <div class="form-group form-group-full">
+                    <textarea id="contact-message" name="message" required rows="5" placeholder=" "
+                        class="form-input form-textarea"></textarea>
+                    <label for="contact-message" class="form-label">Message</label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="submit-button">
+                        <span class="submit-text">Transmit Message</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="submit-icon">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-terminal">
+            <a href="https://github.com/Vansh-Baranwal" target="_blank" class="term-link"><span class="prompt">$</span>
+                open github.com/Vansh-Baranwal</a>
+            <a href="https://linkedin.com/in/Vansh-Baranwal" target="_blank" class="term-link"><span
+                    class="prompt">$</span> open linkedin.com/in/Vansh-Baranwal</a>
+            <a href="mailto:[vanshbaranwal21@gmail.com]" class="term-link"><span class="prompt">$</span>
+                mailto:vanshbaranwal21@gmail.com<span class="term-cursor">_</span>
+            </a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 &mdash; Built with curiosity and too much coffee.
+        </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <!-- Lenis: Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- GSAP: High-performance animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- EASTER EGG UI ELEMENTS -->
+    <div id="konami-toast" class="easter-toast">
+        <span class="toast-icon">🏆</span>
+        <span class="toast-text">ACHIEVEMENT UNLOCKED: You found the secret. Impressive.</span>
+    </div>
+
+    <div id="mobile-shake-toast" class="easter-toast">
+        <span class="toast-icon">⚡</span>
+        <span class="toast-text">Energy detected. Keep building.</span>
+    </div>
+
+    <div id="shortcuts-modal" class="shortcuts-modal" aria-hidden="true">
+        <div class="shortcuts-content">
+            <h3>Keyboard Shortcuts</h3>
+            <ul>
+                <li><kbd>H</kbd> <span>Hero Section</span></li>
+                <li><kbd>T</kbd> <span>Timeline Section</span></li>
+                <li><kbd>A</kbd> <span>Competitive Arenas</span></li>
+                <li><kbd>C</kbd> <span>Contact Form</span></li>
+                <li><kbd>F</kbd> <span>Future Section</span></li>
+                <li><kbd>?</kbd> <span>Toggle Menu</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Core Application Logic -->
+    <script src="main.js"></script>
+    <script src="contact-form.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
