@@ -1,10 +1,9 @@
 import React, { useRef, useMemo, useState, useEffect, useCallback, Suspense } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+
+
 
 /* ── Card Data ─────────────────────────────────────────────────── */
 const CARDS_DATA = [
@@ -298,8 +297,8 @@ export default function SpiralJourney() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
+    const ctx = window.gsap.context(() => {
+      window.ScrollTrigger.create({
         trigger: containerRef.current,
         start: 'top top',
         end: '+=5000',

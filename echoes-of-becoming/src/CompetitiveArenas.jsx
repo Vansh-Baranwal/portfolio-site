@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 // Import images from parent src/assets/hackathons folder
 import alterino1 from '../../src/assets/hackathons/ALterino 1.jpeg';
@@ -17,7 +16,7 @@ import browserbattle1 from '../../src/assets/hackathons/browserbattle-1.jpg';
 import browserbattle2 from '../../src/assets/hackathons/browserbattle-2.jpg';
 import browserbattle3 from '../../src/assets/hackathons/browserbattle-3.jpg';
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 const HACKATHONS = [
   {
@@ -97,8 +96,8 @@ export default function CompetitiveArenas() {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
+    const ctx = window.gsap.context(() => {
+      window.gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 42, filter: 'blur(10px)' },
         {
@@ -116,7 +115,7 @@ export default function CompetitiveArenas() {
       );
 
       if (!isMobile) {
-        ScrollTrigger.create({
+        window.ScrollTrigger.create({
           trigger: sectionRef.current,
           start: 'top top',
           end: '+=2200',
@@ -147,7 +146,7 @@ export default function CompetitiveArenas() {
     }
 
     window.lenis?.stop();
-    const tl = gsap.timeline();
+    const tl = window.gsap.timeline();
     tl.fromTo('.arena-modal-backdrop', { opacity: 0 }, { opacity: 1, duration: 0.24, ease: 'power2.out' }).fromTo(
       '.arena-modal-panel',
       { y: 34, scale: 0.95, opacity: 0 },
@@ -166,7 +165,7 @@ export default function CompetitiveArenas() {
 
   const wheelCards = useMemo(() => {
     const fanProgress = isMobile ? 1 : clamp(progress / 0.36, 0, 1);
-    const fanEase = gsap.parseEase('power3.out')(fanProgress);
+    const fanEase = window.gsap.parseEase('power3.out')(fanProgress);
     const spinProgress = isMobile ? 0 : clamp((progress - 0.36) / 0.64, 0, 1);
     const rotation = spinProgress * 540;
     const radius = viewportWidth < 1280 ? 270 : 335;
